@@ -35,8 +35,7 @@ export function AppShell({ title, children, nav }: { title: string; children: Re
         {children}
       </main>
       <footer className="border-t border-border/60 mt-12 py-6 text-center text-xs text-muted-foreground">
-        MindCare Pakistan · Aligned with SDG 3 · Vision 2030 · Vision 2035 ·{" "}
-        <span>Dataset powered by Kaggle Mental Health in Tech Survey</span>
+        Dataset: Kaggle Mental Health in Tech Survey · SDG 3 · MindCare Pakistan
       </footer>
     </div>
   );
