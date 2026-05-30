@@ -68,6 +68,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary" },
       { name: "twitter:title", content: "MindCare Pakistan — Your Mental Wellness Companion" },
       { name: "twitter:description", content: "AI-powered mental wellness support for Pakistani youth. Aligned with SDG 3, Vision 2030 & 2035." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/47ee9627-fe23-4e24-a8c9-755661fed72a/id-preview-847f7a1c--4887369f-a0cc-40b7-9fa5-fb4acbc3b6b1.lovable.app-1780111643966.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/47ee9627-fe23-4e24-a8c9-755661fed72a/id-preview-847f7a1c--4887369f-a0cc-40b7-9fa5-fb4acbc3b6b1.lovable.app-1780111643966.png" },
     ],
     links: [{ rel: "stylesheet", href: appCss }],
   }),
