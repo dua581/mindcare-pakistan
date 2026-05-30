@@ -63,6 +63,12 @@ function AuthPage() {
     if (result.error) toast.error("Google sign-in failed");
   };
 
+  const fillDemo = (r: "user" | "doctor" | "admin") => {
+    setEmail(`${r}@mindcare.pk`);
+    setPassword("demo123");
+    setTab("login");
+  };
+
   return (
     <div className="min-h-screen bg-gradient-soft flex items-center justify-center p-4">
       <div className="w-full max-w-md space-y-6">
@@ -109,9 +115,31 @@ function AuthPage() {
             Continue with Google
           </Button>
         </Card>
+
+        <Card className="p-4 bg-gradient-card border-0 shadow-soft">
+          <p className="text-xs font-semibold mb-2 text-foreground">🔑 Demo credentials (click to fill)</p>
+          <div className="space-y-1.5 text-xs">
+            {(["user", "doctor", "admin"] as const).map((r) => (
+              <button
+                key={r}
+                type="button"
+                onClick={() => fillDemo(r)}
+                className="w-full flex justify-between items-center p-2 rounded-lg bg-muted hover:bg-accent transition-colors"
+              >
+                <span className="capitalize font-medium">{r}</span>
+                <span className="text-muted-foreground font-mono">{r}@mindcare.pk / demo123</span>
+              </button>
+            ))}
+          </div>
+          <p className="text-[10px] text-muted-foreground mt-2">First time? Click "Load demo data" on the home page.</p>
+        </Card>
+
         <p className="text-center text-xs text-muted-foreground">
           <Link to="/" className="hover:text-foreground">← Back to home</Link>
         </p>
+        <footer className="text-center text-[11px] text-muted-foreground pt-2">
+          Dataset: Kaggle Mental Health in Tech Survey · SDG 3 · MindCare Pakistan
+        </footer>
       </div>
     </div>
   );
